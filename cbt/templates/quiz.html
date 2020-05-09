@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+	<head>
+		<title>CBT APP</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="container text-center">
+	<br/>
+	<strong>{{QA.question}}</strong>
+	<br/>
+	<br/>
+	<form id="quizForm" method="POST">
+		{% csrf_token %}
+		<input id="subject" value='{{QA.Subject}}' hidden>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="answer" id="answer1" value='{{QA.answer_1}}'>
+  <label class="form-check-label" id="answer_1">
+	  {{QA.answer_1}}
+  </label>
+</div>
+<br/>
+                  <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="answer2" value='{{QA.answer_2}}'>         <label class="form-check-label" id="answer_2">                                              {{QA.answer_2}}                   </label>                                </div>
+		  <br/>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="answer3" value='{{QA.answer_3}}'>         <label class="form-check-label" id="answer_3">                                              {{QA.answer_3}}                   </label>                                </div>
+		    <br/>
+                          <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answer" id="answer4" value='{{QA.correct_answer}}'>         <label class="form-check-label" id="answer_4">                                              {{QA.correct_answer}}                   </label>                                </div>
+	
+<br/>
+	</form>
+		<button type="submit"  class="btn btn-success" onclick="test()" id="nextqa">Next</button>
+
+</div>
+	</body>
+	<script src="{% static 'js/quiz.js' %}"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</html>
+

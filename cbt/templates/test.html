@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="test">
+	<p>
+	<div class="alert alert-primary" role="alert">
+  To begin test, pick one of the subjects below:
+</div>
+	{% for subject in Subjects %}
+	<div class="text-center card">
+		<div class="card-body">
+			<p class="text-center">
+			<h4 class="card-title">{{subject.course_name}}</h4>
+			<i class={{subject.fa_icon}}></i>
+			<br/>
+			{{subject.description}}
+			<br/>
+			<hr>
+			<a href={{subject.get_absolute_url}}><button id="starttest" class="btn btn-lg btn-primary">Start</button></a>
+			</p>
+		</div>
+	</div>
+	<br/>
+	{% endfor %}
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if qas %}
+<div class="text-center">
+	<p id="stopwatch"></p>
+</div>
+
+<input type="hidden" value={{Subject.course_name}} id="subject">
+<input type="hidden" value={{Subject.duration_in_minutes}} id="duration">
+<div id="test">
+</div>
+
+{% else %}
+<br/>
+<div class="text-center">
+	<strong>No questions available!</strong>
+</div>
+
+{% endif %}
+{% endblock %}

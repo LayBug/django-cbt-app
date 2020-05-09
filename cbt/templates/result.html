@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br/>
+<input id="point" value='{{score.point}}' hidden>
+<input id="total_no_qas" value={{total_no_qas}} hidden>
+<div class="text-center">
+	<div class="alert alert-success" role="alert">
+  You have successfully completed the test!
+	</div>
+	<div class="card text-center">
+  <div class="card-header">
+    Score Obtained!
+  </div>
+  <div class="card-body">
+	  <p class="card-text"></p>
+	  <button id="score" class="btn btn-primary"></button>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
